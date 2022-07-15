@@ -1,0 +1,270 @@
+:root{
+    --blanco: #fcfafa;
+    --detalle: #F6AE2D;
+    --secundario: #b1c6db;
+    --primario: #4d6f92;
+    --oscuroDos: #4b4848;
+    --negro: #000000;
+
+    
+    
+}
+
+/*1rem = 10px*/
+html{
+    font-size: 62.5%;
+    box-sizing: border-box;
+    scroll-snap-type: y mandatory;
+    margin: 0;
+}
+.servicios, .navegacion-principal, .contenedor-campos{
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+  }
+body{
+    font-size: 16px; /*10px = 1rem*/
+    font-family: 'Roboto Flex', sans-serif;
+    background-image: linear-gradient(to top, var(--secundario) 0%, var(--blanco)100%);
+}
+h1{
+    font-size: 3.8rem;
+}
+h2{
+font-size: 2.6rem;
+}
+h3{
+font-size: 1.8rem;
+}
+h1,h2,h3{
+    text-align: center;
+}
+.titulo{
+    text-align: center;
+    font-size: 3rem;
+    color: var(--oscuroDos);
+    padding: 1rem;
+}
+/* Navegacion + banner */
+.titulo span{
+    font-size: 1.5rem;
+    color: var(--detalle);
+    text-shadow: var(color);
+    outline-color: var(--oscuroDos);
+
+}
+
+.nav-bg{
+    background-color: var(--primario);
+    
+}
+.navegacion-principal{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.navegacion-principal a{
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--blanco);
+    text-decoration: none;
+}
+.navegacion-principal a:hover{
+    background-color: var(--secundario);
+    color: var(--oscuroDos);
+}
+.contenedor{
+    max-width: 120rem;
+    margin: 0 auto;
+
+}
+.hero{
+    height:40rem;
+
+    background-image: url(../img/hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 2rem;
+}
+.contenido-hero{
+position: relative;
+background-color: rgba(0,0,0,0.7);
+width: 100%;
+height: 100%;
+
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.contenido-hero h2,
+.contenido-hero p{
+ color: var(--blanco);
+}
+.ubicacion{
+   display: flex;
+ align-items: flex-end;
+}
+.ubicacion p {
+    margin: 0;
+}
+.boton{
+    background-color: var(--primario) ;
+    color: var(--blanco);
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    font-size: 1.8rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    width: 80%;
+    text-align: center;
+    border: none;
+    
+}
+.boton:hover{
+    cursor: pointer;
+}
+.sombra{
+
+    box-shadow: 0px 5px 15px 0px rgba(112,108,112,1);
+    background-color: var(--blanco);
+    padding: 2rem;
+    border-radius: 1rem;
+}
+
+/* servicios */
+
+.servicio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.servicio h3{
+    font-weight: normal;
+    color: var(--primario);
+}
+.servicio p{
+ line-height: 2;
+ text-align: center;
+}
+.servicio .icono{
+    height: 12rem;
+    width: 12rem;
+    border-radius: 50%;
+    background-color: var(--detalle);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+/* cotnacto*/
+.formulario{
+    background-color: var(--oscuroDos);
+    width: min(60rem, 100%);
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 1rem;
+}
+.formulario legend{
+    text-align: center;
+    margin-bottom: 2rem;
+    color: var(--detalle);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.formulario fieldset{
+    border: none;
+}
+
+.campo{
+    margin-bottom: 1rem;
+}
+textarea{
+    height: 15rem;
+}
+.campo label{
+    color: var(--blanco);
+    font-weight: bold;
+    margin-bottom: .5rem;
+    display: block;
+}.campo textarea{
+    resize: none;
+}
+.input-text{
+    width: 100%;
+    padding: 1.5rem;
+    border: none;
+    border-radius: .5rem;
+}
+
+/*footer*/
+.footer{
+    text-align: center;
+}
+
+
+
+/*Utilidades */ 
+.w-sm-100{
+    width: 100%;
+}
+.flex{
+    display: flex;
+}
+.alinear-derecha{
+    justify-content:flex-end ;
+}
+
+
+
+
+/* Queries */ 
+@media (min-width: 768px){
+    .navegacion-principal{
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .boton{
+        width: auto;
+    }
+    .w-sm-100{
+        width: auto;
+    }
+    .servicios{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 1rem;
+    }
+    .contenedor-campos{
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto 20rem;
+        grid-template-areas: "nombre telefono"
+                            "correo correo"
+                            "mensaje mensaje";
+        column-gap: 1rem;
+    }
+    .nombre{
+        grid-area: nombre;
+    }
+    .telefono{
+        grid-area: telefono;
+    }
+    .correo{
+        grid-area: correo;
+    }
+    .mensaje{
+        grid-area: mensaje;
+        resize: none;    
+    }
+}
